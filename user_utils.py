@@ -28,7 +28,7 @@ def count_vowels(s: str) -> int:
     """Подсчёт гласных"""
     # Тут будет код
 
-def fibonacci(n: int) -> list[int]:
+def from_Fibonacci (n: int) -> list[int]:
     """Генерация последовательности Фибоначчи длины n"""
     # Тут будет код
 
@@ -60,18 +60,18 @@ def group_by_parity(lst: list[int]) -> dict[str, list[int]]:
     """Разделение списка на чётные и нечётные"""
     # Тут будет код
 
-def transpose(matrix: list[list[int]]) -> list[list[int]]:
+def from_transportation(matrix: list[list[int]]) -> list[list[int]]:
     """Транспонирование матрицы"""
     # Тут будет код
 
-def validate_password(pwd: str) -> bool:
+def from_ # Тут будет код(pwd: str) -> bool:
     """
     Проверка пароля по условиям:
     - не меньше 8 символов
     - есть цифра
     - есть заглавная буква
     """
-    # Тут будет код
+
 
 def parse_csv_row(row: str) -> list[str]:
     """Разделяет CSV-строку по запятым, учитывая кавычки"""
