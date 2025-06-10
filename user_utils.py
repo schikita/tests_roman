@@ -1,70 +1,112 @@
 def add(a: int, b: int) -> int:
     """Сложение двух чисел"""
-    # Тут будет код
+    return a + b
 
 def is_even(n: int) -> bool:
     """Проверка, чётное ли число"""
-    # Тут будет код
+    return n % 2 == 0
 
 
 def max_of_three(a: int, b: int, c: int) -> int:
     """Максимум из трёх чисел"""
-    # Тут будет код
+    if a > b > c:
+        return a
+    elif b > c:
+        return b
+    else:
+        return c
 
 def reverse_string(s: str) -> str:
     """Переворачивает строку"""
-    # Тут будет код
+    return s[::-1]
 
 
 def factorial(n: int) -> int:
     """Вычисляет факториал"""
-    # Тут будет код
+    if n <= 0:
+        return 1
+    return factorial(n -1) * n
 
 def is_palindrome(s: str) -> bool:
     """Проверка, является ли строка палиндромом"""
-    # Тут будет код
+    return s == s[::-1]
 
 def count_vowels(s: str) -> int:
     """Подсчёт гласных"""
-    # Тут будет код
+    vowels = 'aeuioAEUIO'
+    return sum (1 for char in s if char in vowels )
 
 def from_Fibonacci (n: int) -> list[int]:
     """Генерация последовательности Фибоначчи длины n"""
-    # Тут будет код
+    result = [0, 1]
+    while len(result) < n:
+        result.append (result[-1] + result[-2])
+    return result [:n]
 
 def remove_duplicates(lst: list[int]) -> list[int]:
     """Удаление дубликатов из списка"""
-    # Тут будет код
+    seen = set()
+    result = []
+    for num in lst:
+        if num not in seen:
+            seen.add(num)
+            result.append(num)
+    return result
 
 def flatten(matrix: list[list[int]]) -> list[int]:
     """Преобразование матрицы в плоский список"""
-    # Тут будет код
+    return [item for row in matrix for item in row]
 
 def get_common_elements(a: list[int], b: list[int]) -> list[int]:
     """Общие элементы двух списков"""
-    # Тут будет код
+    return list(dict.fromkeys([x for x in a if x in b]))
 
 def is_anagram(a: str, b: str) -> bool:
     """Проверка, являются ли строки анаграммами"""
-    # Тут будет код
+    return sorted(a.lower()) == sorted(b.lower())
 
 def unique_words(text: str) -> set[str]:
     """Возвращает уникальные слова из строки"""
-    # Тут будет код
+    words = text.lower().split()
+    return set(word.strip(".,!?;:()[]\"'") for word in words)
 
 def merge_dicts(d1: dict, d2: dict) -> dict:
     """Объединяет два словаря"""
-    # Тут будет код
+    d1.update(d2)
+    return d1
+
+d1 = {'d1': 1}
+d2 = {'d2': 1}
+
+print(merge_dicts(d1, d2))
 
 def group_by_parity(lst: list[int]) -> dict[str, list[int]]:
     """Разделение списка на чётные и нечётные"""
-    # Тут будет код
+    result = {
+        "even": [],
+        "odd": []
+    }
+    for number in lst:
+        if number % 2 == 0:
+            result["even"].append(number)
+        else:
+            result["odd"].append(number)
+    return result
 
 def from_transportation(matrix: list[list[int]]) -> list[list[int]]:
     """Транспонирование матрицы"""
-    # Тут будет код
+    if not matrix:
+        return []
+    return [list(row) for row in zip(*matrix)]
 
-def from_ # Тут будет код(pwd: str) -> bool:
+def from_password(pwd: str) -> bool:
+    if len(pwd) < 8:
+        return False
+    if not any(char.isdigit() for char in pwd):
+        return False
+    if not any(char.isupper() for char in pwd):
+        return False
+    return True
     """
     Проверка пароля по условиям:
     - не меньше 8 символов
@@ -75,9 +117,8 @@ def from_ # Тут будет код(pwd: str) -> bool:
 
 def parse_csv_row(row: str) -> list[str]:
     """Разделяет CSV-строку по запятым, учитывая кавычки"""
-    # Тут будет код
+
 
 def calculate_expression(expr: str) -> float:
     """Вычисляет выражение вида '2 + 2 * 3' (без eval)"""
     # Тут будет код
-
